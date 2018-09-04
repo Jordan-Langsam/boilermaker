@@ -1,21 +1,139 @@
-body {
-  font-family: sans-serif;
+#flex-container-row-wrap {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
 }
 
-a {
-  text-decoration: none;
+#navBar-regularButton{
+  color: white;
+  padding-left: 30%;
 }
 
-label {
-  display: block;
+#navBar-boldText {
+  font-family: 'Lucida Grande';
+  margin-left: 30%;
+  color: white;
+  font-size: 25px;
+  font-style: bold;
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
+#flex-container-centerButtons{
+  font-family: 'Lucida Grande';
+  display: flex;
+  text-justify: distribute-all-lines;
+  flex-wrap: nowrap;
+  position: absolute;
+  margin-left: 600px;
+  width: 60%;
 }
 
-form div {
-  margin: 1em;
-  display: inline-block;
+#navBar-rightButton{
+  font-family: 'Lucida Grande';
+  color: white;
+  font-size: 18px;
+   margin-right: 5px;
+}
+
+#flex-container-rightButtons{
+  font-family: 'Lucida Grande';
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  margin-left: 900px;
+}
+
+.greenButton {
+  height: 30px;
+  font-family: 'Lucida Grande';
+  border-radius: 5px;
+  width: 100px;
+  background-color: rgb(84, 212, 149);
+  border-color: rgb(84, 212, 149);
+  color: white
+}
+
+.greenButton.large{
+  height: 50px;
+}
+
+.greenButton.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 5%;
+  margin-left: 43%;
+  font-size: 30px;
+}
+
+#flex-container-getAWebsite {
+  position: absolute;
+  word-break: normal;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Lucida Grande';
+  margin-left: 35%;
+  padding-top: 15%;
+  width: 500px;
+}
+
+#getAWebsiteText{
+  font-size: 40px;
+  color: white;
+  padding-left: 5%;
+}
+
+#flex-container-15-minutes{
+  display: flex;
+  width: 600px;
+  flex-wrap: nowrap;
+}
+
+#in15Minutes {
+  font-size: 40px;
+  color: white;
+}
+
+#orLessText{
+  padding-left: 6px;
+  font-size: 40px;
+  color: rgb(84, 212, 149);
+}
+
+#searchBarContainer {
+  position: absolute;
+  margin-left: 35%;
+  padding-top: 25%;
+}
+
+#searchBar {
+  width: 230px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: white;
+  font-size: 18px;
+}
+
+#enhanceYourBusiness{
+  position: absolute;
+  align-content: center;
+  color: white;
+  font-family: "Geneva";
+  align-items: center;
+  margin-left: 37%;
+  padding-top: 35%;
+}
+
+#flex-container-createAccount{
+  position: absolute;
+  margin-left: 35%;
+  padding-top: 45%;
+  width: 30%;
+}
+
+#createAccountButton{
+  margin-top: 10%;
+  margin-left: 40%;
+  border-radius: 5px;
+  background-color: rgba(196, 94, 225);
+  color: white;
 }

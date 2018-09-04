@@ -1,56 +1,52 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {logout} from '../store'
+import NavbarButton from './navBarButton'
+import GreenButton from './GreenButton'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <h1>BOILERMAKER</h1>
-    <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )}
-    </nav>
-    <hr />
-  </div>
-)
+export default class Navbar extends React.Component {
+  constructor(){
+    super();
 
-/**
- * CONTAINER
- */
-const mapState = state => {
-  return {
-    isLoggedIn: !!state.user.id
+    this.createCenterButtons = this.createCenterButtons.bind(this);
+    this.createLeftBoldButton = this.createLeftBoldButton.bind(this);
+    this.createRightButtons = this.createRightButtons.bind(this);
   }
-}
 
-const mapDispatch = dispatch => {
-  return {
-    handleClick() {
-      dispatch(logout())
+  createRightButtons() {
+    let buttons = [];
+
+    buttons.push(<NavbarButton buttonText='Login' style='navBar-rightButton' key='Login'/>);
+    buttons.push(<GreenButton buttonText='Support' key='Support'/>);
+
+    return buttons;
+  }
+
+  createCenterButtons(){
+    let buttons = [];
+
+    for (let i = 0; i < arguments.length; i++){
+      buttons.push(<NavbarButton buttonText={arguments[i]}style='navBar-regularButton' key={i}/>)
     }
+
+    return buttons;
   }
-}
 
-export default connect(mapState, mapDispatch)(Navbar)
+  createLeftBoldButton(){
+    return <NavbarButton buttonText='MyWebNow' style='navBar-boldText' key='myWebNow'/>
+  }
 
-/**
- * PROP TYPES
- */
-Navbar.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
+  render(){
+    return (
+      <div id="flex-container-row-wrap">
+        <div>
+          {this.createLeftBoldButton()}
+        </div>
+        <div id="flex-container-centerButtons">
+          {this.createCenterButtons('Home', 'Why Us', 'Contact Us')}
+        </div>
+        <div id="flex-container-rightButtons">
+          {this.createRightButtons()}
+        </div>
+      </div>
+      )
+  }
 }
